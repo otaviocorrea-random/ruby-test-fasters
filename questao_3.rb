@@ -6,8 +6,7 @@ require './utils/input.rb'
 def normaliza_string(key, value, params)
   len = params['length'].to_i
 
-  value = value.slice(0,len) if value.length > len
-  value = add_padding(value, params['align'], params['spaces'], len) if value.length < len
+  value = remove_padding(value, params['align'], params['spaces'], len)
 
   value
 end
@@ -34,4 +33,4 @@ def solucao(arg)
   obj
 end
 
-puts solucao(INPUT_3)
+puts solucao(INPUT_2)
