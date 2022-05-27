@@ -16,7 +16,7 @@ def remove_padding(value, align, type, len)
   return value.strip() if type == 'spaces'
   {
     left: value.sub!(/^[0]+/,''),
-    right: value.sub!(/^[0]+/,''),
+    right: value.reverse.sub!(/^[0]+/,'').reverse,
   }[align.to_sym] || value
 end
 
